@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Weather Data Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #eef;
+      padding: 20px;
+    }
+    .form-container {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 500px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+    button:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Weather Data Form</h2>
+    <form action="{{ url_for('predict_datapoint') }}" method="POST">
+      <label for="temperature">1. Temperature</label>
+      <input type="text" name="temperature" required>
+
+      <label for="rh">2. RH</label>
+      <input type="text" name="rh" required>
+
+      <label for="ws">3. WS</label>
+      <input type="text" name="ws" required>
+
+      <label for="rain">4. Rain</label>
+      <input type="text" name="rain" required>
+
+      <label for="ffmc">5. FFMC</label>
+      <input type="text" name="ffmc" required>
+
+      <label for="dmc">6. DMC</label>
+      <input type="text" name="dmc" required>
+
+      <label for="isi">7. ISI</label>
+      <input type="text" name="isi" required>
+
+      <label for="classes">8. Classes</label>
+      <input type="text" name="classes" required>
+
+      <label for="region">9. Region</label>
+      <input type="text" name="region" required>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  <h2>
+    THE FWI PREDITION IS{{results}}
+  </h2>
+</body>
+</html>
